@@ -1,0 +1,168 @@
+<!DOCTYPE html><html><head>
+<title>Scholars Portal Day 2014: From DIY to Working Together: Using a Hackspace to Build Community</title>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+.small {
+    letter-spacing: -50px;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:75px;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+
+
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), ti;
+    if (!s) return;
+    big = { current: 0, forward: fwd, reverse: rev, go: go, length: s.length };
+    function go(n) {
+        big.current = n;
+        var i = 1e3, e = s[n], t = parseInt(e.dataset.timeToNext || 0, 10);
+        document.body.className = e.dataset.bodyclass || '';
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild && e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            if ('classList' in e) e.classList.add('imageText');
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        if (ti !== undefined) window.clearInterval(ti);
+        if (t > 0) ti = window.setTimeout(fwd, (t * 1000));
+        while ((e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) && i >= 0) {
+            e.style.fontSize = (i -= 2) + 'px';
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() { go(++big.current % (s.length)); };
+    function fwd() { go(Math.min(s.length - 1, ++big.current)); }
+    function rev() { go(Math.max(0, --big.current)); }
+    document.onkeydown = function(e) {
+        if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+        if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+    };
+    document.ontouchstart = function(e) {
+        var x0 = e.changedTouches[0].pageX;
+        document.ontouchend = function(e) {
+            var x1 = e.changedTouches[0].pageX;
+            if (x1 - x0 < 0) fwd();
+            if (x1 - x0 > 0) rev();
+        };
+    };
+    function parse_hash() {
+        return Math.max(Math.min(s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) big.current = parse_hash() || big.current;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== big.current) go(c);
+    };
+    go(big.current);
+};
+</script></head><body>
+
+
+<div>Scholars Portal Day  <em>Dec 3, 2014. Snell Hall, St. James Cathedral, Toronto</em></div>
+<div>From DIY to Working Together <em>Using a Hackspace to Build Community</em> Mita Williams</div>
+<div>You can't tell how many apples are in a seed</div>
+<div><img src="images/WEChangeCamp.jpg" /></div>
+<div><img src="images/windsor-hackerspace.jpg" />2010</div>
+<div><img src='images/code4libnorth.jpg' />2012</div>
+<div>2013</div>
+<div><img src='images/Hackforge.png'></div>
+<div><img src='images/Hackathon1.png' /></div>
+<div><img src='images/Hackathon2.png' /></div>
+<div><img src='images/HackWE33.png' /></div>
+<div><img src='images/summer-games.png' /></div>
+<div><img src='images/TechTalks.jpg' /></div>
+<div><img src='images/ArtReturns.jpg' /></div>
+<div><img src='images/guild.jpg' /></div>
+<div><img src='images/ODWE.png' /></div>
+<div><img src='images/FordCity.png' /></div>
+<div><img src='images/lego-robots.png' /></div>
+<div><img src='images/spoke-pov.png' /></div>
+<div><img src='images/library-box-cropped.jpg' /></div>
+<div><img src='images/hackers.jpg' /></div>
+<div>2014</div>
+<div><img src='images/aaron-returns.png' /></div>
+<div>From DIY to Working Together <em>Using a Hackspace to Build Community</em></div>
+<div>1 :: Institutions <em>reduce the choices</em> available to their members</div>
+<div>These frozen choices are what gives institutions their vitality — they are in fact what make them institutions. <em>Freed of the twin dangers of navel-gazing and random walks</em>, an institution can concentrate its efforts on some persistent, medium-sized, and tractable problem, working at a scale and longevity unavailable to its individual participants.</div>
+<div><img src='images/door.png' /></div>
+<div>Hackforge would not have existed if it weren’t for its very first volunteers</div>
+<div>Every interaction</br> is a <a href="http://textontechs.com/2014/01/every-interaction-is-a-gift/">gift</a></div>
+<div><em>Culture</em> is to an organization as <em>community</em> is to a city</div>
+<div>Take the time to make sure that the <em>way</em> you do things matches up with the <em>why</em> you do things</div>
+<div><em>Hackforge</em> supports <em>capacity building</em> in the community and supporting a culture of <em>mentorship</em> and <em>inclusivity</em></div>
+<div><img src='images/ExemptionsIT.png' /></div>
+<div><img src='images/press-coverage.png' /></div>
+<div><em>2 :: Show</em> Your Work</div>
+<div><img src='images/panel-laugh.jpg' /></div>
+<div>You have to show your work <em>in public</em> if you want collaborators to find you.</div>
+<div>Lean coffee!</div>
+<div><img src='images/Maptime-Detroit.jpg' /></div>
+<div>3 :: Acknowledge who is <em>not</em> in the room</div>
+<div><a href="http://www.quinnnorton.com/said/?p=610">Count</a>.</div>
+<div>4 :: A mailing list is <em>not</em> a</br>community.</div>
+<div><img src="images/running-a-hackerspace.png"></div>
+<div><img src="images/running-a-mailinglist.png"></div>
+<div><img src="images/slack.png"></div>
+<div><img src="images/Jira.png"></div>
+<div><img src="images/NationBuilder.png"></div>
+<div><img src="images/VolunteerSpot.png"></div>
+<div>5:: Invest in but do not outsource community management</div>
+<div>We are a volunteer organization and as such, by the process of evolution, we are a place for the <em>patient</em> and the <em>forgiving</em>. </div>
+<div>Institutions reduce the choices available to their members. <em>Show your work.</em> Acknowledge who isn’t the room. <em>A mailing list is not a community. </em>Invest in but do not outsource community management.</div>
+<div>Thank you. </div>
+</body>
